@@ -2,15 +2,20 @@ import os
 
 
 def copy_file(command: str) -> None:
-    list_com = command.split()
+    command_parts = command.split()
 
-    if len(list_com) != 3:
+    if len(command_parts) != 3:
         return
 
-    com_, source, destination = list_com
+    command_name, source, destination = command_parts
 
-    if (command == "" or source == "" or destination == "" or com_ != "cp"
-            or not os.path.exists(source)):
+    if (
+            command == ""
+            or source == ""
+            or destination == ""
+            or command_name != "cp"
+            or not os.path.exists(source)
+    ):
         return
 
     if source == destination:
