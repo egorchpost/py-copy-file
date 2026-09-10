@@ -1,7 +1,7 @@
 import os
 
 
-def copy_file(command):
+def copy_file(command: str) -> None:
     list_com = command.split()
 
     if len(list_com) != 3:
